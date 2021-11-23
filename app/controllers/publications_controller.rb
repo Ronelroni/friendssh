@@ -1,4 +1,5 @@
 class PublicationsController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_publication, only: %i[ show edit update destroy ]
   
     def index
@@ -7,7 +8,7 @@ class PublicationsController < ApplicationController
     end
   
     def show
-      @favorite = current_user.favorites.find_by(publication_id: @publication.id)
+      
     end
   
     def new

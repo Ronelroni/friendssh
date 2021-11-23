@@ -10,6 +10,7 @@
                      
                      <p id="notice"><%= notice %></p>
                     <p>
+                    image_tag(@publication.image_url, :alt => @publication.content)
                       <img
                         src="<%= @publication.image %>"
                         class="img-fluid"

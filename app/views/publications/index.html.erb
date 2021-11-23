@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 <div class="text-center">
-  <h1>Publications</h1>
+  <h1>Publications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
 </div>
 
 <div style="margin-top: 50px;">
 <% @publications.each do |publication| %>
   
 <div class="row">
-  <div class="col-md-2">
+  <div class="col-md-1">
     
   </div>
 
@@ -36,7 +36,7 @@
         </div><br>
         <div class="card-footer"></div>
           <div class="flex text-center">
-            <% if publication.user_id == @current_user.id %>
+            <% if publication.user_id == @current_user %>
             <%= link_to 'Show', publication %>||
             <%= link_to 'Edit', edit_publication_path(publication) %> ||
             <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -63,7 +63,7 @@
 </div>
   </div>
 
-  <div class="col-md-2">
+  <div class="col-md-1">
       
   </div>
 

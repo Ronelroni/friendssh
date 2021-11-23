@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
-    include SessionsHelper
-    before_action :login_required
-    private
-    def login_required
-        redirect_to new_session_path unless current_user
+    before_action :configure_permitted_parameters, if: :devise_controller?
+    protected
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     end
 end
