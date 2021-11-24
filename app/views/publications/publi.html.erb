@@ -39,7 +39,7 @@
             <% if publication.user_id == current_user.id %>
               <%= link_to 'Show', publication %>||
               <%= link_to 'Edit', edit_publication_path(publication) %> ||
-              <%= link_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= button_to 'Destroy', publication, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% else %>
               <%= link_to 'Show', publication %>||
             <% end %>

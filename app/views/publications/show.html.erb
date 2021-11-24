@@ -25,12 +25,12 @@
                  </div>
                  <div class="card-footer text-center">
                     <% if @like.present? %>
-                      <%= link_to 'Unlike', like_path(id: @like.id), method: :delete, class: 'btn btn-danger' %>||
+                      <%= button_to 'Unlike', like_path(id: @like.id), method: :delete, class: 'btn btn-danger' %>||
                     <% else %>
-                      <%= link_to 'Like', likes_path(publication_id: @publication.id), method: :post, class: 'btn btn-primary' %>||
+                      <%= button_to 'Like', likes_path(publication_id: @publication.id), method: :post, class: 'btn btn-primary' %>||
                     <% end %>
-                   <%= link_to 'Edit', edit_publication_path(@publication) %> ||
-                   <%= link_to 'Back', publications_path %>  
+                   <%= button_to 'Edit', edit_publication_path(@publication) %> ||
+                   <%= button_to 'Back', publications_path %>  
                  </div>
                  <div class="card-footer text-center">
                  <div id="comments_area">
