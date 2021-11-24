@@ -47,15 +47,15 @@
 
     <nav class="navbar navbar-expand-lg navbar-blue  mb-3" style="background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);">
         <div class="container">
-            <a class="navbar-brand" href="#">Insta-Friends</a>
+            <a class="navbar-brand" href="publications">Insta-Friends</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   
                   <% if user_signed_in? %>
-                    <%= link_to "Home", publications_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <%= link_to "My Publications", publications_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <h5>Profile</h5>&nbsp;&nbsp;
+                    <%= link_to "Home", publications_path, class: "btn btn-white" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <%= link_to "My Publications", userpub_path, class: "btn btn-white" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h5>Profile</h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <% else %> 
                     
                     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success" %> &nbsp;&nbsp;&nbsp;
@@ -67,27 +67,17 @@
         </div>
     </nav>
     
-    <%= yield %> 
-
-  <footer class="bg-light text-center text-lg-start fixed*bottom">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);">
-      © 2021 Copyright:
-      <a class="text-dark" href="/">Insta-Friends</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-
-  <% if user_signed_in? %>
+    <%= yield  %>
+    <% if user_signed_in? %>
     <div class="wrapper">
       <!-- Sidebar  -->
       <nav id="sidebar">
           <div class="sidebar-header">
-              <h3 style="font-weight: bold;"></h3>
+              <h3 class="text-center", style="font-weight: bold;">Profile</h3>
           </div>
 
             <div class="text-center">
-              <% if  %>
+              <% if current_user.image.blank?%>
                   <img
                   src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
                   class="img-fluid rounded-circle"
@@ -96,30 +86,41 @@
               />
               <% else %>
                   <img
-                    src="<%= @user.image %>"
+                    src="<%= current_user.image.url %>"
                     class="img-fluid rounded-circle"
                     alt=""
-                    style="height: 120px; width: 120px; margin-top: 30px;"
+                    style="height: 120px; width: 120px; margin-top: 20px;"
                   />
               <% end %>
-
-              <h5 style="margin-top: 30px;">Publications :&nbsp;</h5>
+              <h6 style="margin-top: 10px;">Name : <%= current_user.name %> &nbsp;</h6>
+              <h6>Publications : <%= current_user.publications.count %> &nbsp;</h6>
 
             </div>
 
             <div class="list-unstyled text-center" style="margin-top: 20px;">
               <%= link_to "Edit", edit_user_registration_path, class: "btn btn-success" %>
             </div>
-            <ul class="list-unstyled text-center" style="margin-top: 50px;">
-                <li >
+            <ul class="list-unstyled text-center" style="margin-top: 20px;">
                     <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger "%>   
-                </li>
             </ul>
+            <div class="text-center", style="margin-top: 60px;">
+              <%= link_to 'New Publication', new_publication_path, class: "btn btn-warning" %>
+            </div>
       </nav>
     
     <% else %> 
         
     <% end %>
+ 
+
+  <footer class="bg-light text-center text-lg-start fixed*bottom">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      © 2021 Copyright:
+      <a class="text-dark" href="/">Insta-Friends</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <!-- Copyright -->
+  </footer>
 
     <!-- MDB -->
 <script

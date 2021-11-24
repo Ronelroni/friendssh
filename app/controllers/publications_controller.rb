@@ -6,9 +6,16 @@ class PublicationsController < ApplicationController
       @publications = Publication.all
       @users = User.all
     end
+
+    def publi
+        @publicat = current_user.publications.all
+        @users = User.all
+    end
   
-    def show
-      
+    def show 
+        @comments = @publication.comments
+        @comment = @publication.comments.build
+        @like = current_user.likes.find_by(publication_id: @publication.id)
     end
   
     def new
@@ -35,11 +42,6 @@ class PublicationsController < ApplicationController
           end
         end
       end
-    end
-  
-    def confirm
-      @publication = current_user.publications.build(publication_params)
-      render :new if @publication.invalid?
     end
   
     def update
