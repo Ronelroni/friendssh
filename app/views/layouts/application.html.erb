@@ -51,8 +51,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   
                   <% if user_signed_in? %>
-                    <%= link_to "Accueil", publications_path, class: "btn btn-white" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <%= link_to "Toutes les Publications", allpub_path, class: "btn btn-white" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <%= link_to "Accueil", allpub_path, class: "btn btn-white" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <%= link_to "Mes Publications", userpub_path, class: "btn btn-white" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <%= link_to "Profile", profil_path, class: "btn btn-white" %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <%= button_to "Deconnexion", destroy_user_session_path, method: :delete, class: "btn btn-danger "%>

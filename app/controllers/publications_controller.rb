@@ -2,9 +2,6 @@ class PublicationsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_publication, only: %i[ show edit update destroy ]
   
-    def index
-      
-    end
 
     def publication
       @publications = Publication.all

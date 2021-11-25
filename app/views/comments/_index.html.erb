@@ -4,7 +4,7 @@
         <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
         <p><%= comment.content %></p>
         <p><%= link_to "Modifier", edit_publication_comment_path(publication, comment), remote: true %>&nbsp;&nbsp;&nbsp;&nbsp;
-        <%= link_to "Effacer", publication_comment_path(comment.publication_id, comment.id), method: :delete, remote: true,
+        <%= link_to "Effacer", publication_comment_path(comment.publication_id, comment.id), method: :delete,
                                         data: { confirm: "Do you really want to delete this?"} %></p> <hr>
     <% end %>
   <% end %>
