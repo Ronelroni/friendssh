@@ -3,6 +3,10 @@ class PublicationsController < ApplicationController
     before_action :set_publication, only: %i[ show edit update destroy ]
   
     def index
+      
+    end
+
+    def publication
       @publications = Publication.all
       @users = User.all
     end
@@ -72,5 +76,5 @@ class PublicationsController < ApplicationController
     def publication_params
       params.require(:publication).permit(:image, :image_cache, :content)
     end
-  end
+end
   

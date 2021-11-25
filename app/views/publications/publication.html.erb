@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="text-center">
-  <h2>Mes Publications</2>
+  <h2>Toutes Publications</h2>
 </div>
 
 <div style="margin-top: 50px;">
-<% @publicat.each do |publication| %>
+
+<% @publications.each do |publication| %>
   
 <div class="row">
   <div class="col-md-2">
@@ -41,7 +42,7 @@
               <%= link_to 'Modifier', edit_publication_path(publication) %> ||
               <%= button_to 'Supprimer', publication, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% else %>
-              <%= link_to 'Voir', publication %>||
+              <%= link_to 'Voir', publication %>
             <% end %>
           </div>
     <div class="card-body">
