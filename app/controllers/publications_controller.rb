@@ -60,7 +60,7 @@ class PublicationsController < ApplicationController
     def destroy
       @publication.destroy
       respond_to do |format|
-        format.html { redirect_to publications_url, notice: "Publication was successfully destroyed." }
+        format.html { redirect_to allpub_path, notice: "Publication was successfully destroyed." }
         format.json { head :no_content }
       end
     end
@@ -71,7 +71,7 @@ class PublicationsController < ApplicationController
     end
   
     def publication_params
-      params.require(:publication).permit(:image, :image_cache, :content)
+      params.require(:publication).permit(:image, :content)
     end
 end
   

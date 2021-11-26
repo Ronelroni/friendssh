@@ -40,7 +40,7 @@
                       <% end %>
                     <% end %>
                    <%= button_to 'Modifier', edit_publication_path(@publication) %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <%= button_to 'Retour', publications_path %>  
+                   <%= button_to 'Supprimer', publication_path(@publication.id), method: :delete %>  
                  </div>
                  <div class="card-footer text-center">
                  <div id="comments_area">
