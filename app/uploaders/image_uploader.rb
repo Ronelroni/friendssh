@@ -4,7 +4,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Cloudinary will be utilized in production (Heroku) while local psql stored us utilized in development and testing environment.
   
-  if Rails.env.development?
+  if Rails.env.production?
     include Cloudinary::CarrierWave
     CarrierWave.configure do |config|
       config.cache_storage = :file

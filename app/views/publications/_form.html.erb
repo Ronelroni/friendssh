@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-body text-center">
                      
-                    <%= form_with(model: @publication, local: true ) do |form| %>
+                    <%= form_with(model: @publication, local: true, url: choose_new_or_edit) do |form| %>
                     <% if publication.errors.any? %>
                       <div id="error_explanation">
                         <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
@@ -23,12 +23,12 @@
 
                     <div class="field">
                       <%= form.file_field :image %>
-                      <% form.hidden_field :image_cache %>
+                      <%= form.hidden_field :image_cache %>
                     </div><br>
 
                     <div class="field">
                       <%= form.label :content %><br>
-                      <%= form.text_area :content %>
+                      <%= form.text_area :content, placeholder: "Commentez votre image." %>
                     </div><br>
 
                     <div class="actions">

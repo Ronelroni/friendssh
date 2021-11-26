@@ -40,7 +40,7 @@
                       <% end %>
                     <% end %>
                     <% if current_user.id == @publication.user_id %>
-                      <%= button_to 'Modifier', edit_publication_path(@publication) %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <%= button_to 'Modifier', edit_publication_path, method: :get  %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <%= button_to 'Supprimer', publication_path(@publication.id), method: :delete %>
                     <% end %>  
                  </div>

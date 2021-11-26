@@ -44,6 +44,11 @@ class PublicationsController < ApplicationController
         end
       end
     end
+
+    def confirm
+      @publication = current_user.publications.build(publication_params)
+      render :new if @publication.invalid?
+    end
   
     def update
       respond_to do |format|
@@ -71,7 +76,7 @@ class PublicationsController < ApplicationController
     end
   
     def publication_params
-      params.require(:publication).permit(:image, :content)
+      params.require(:publication).permit(:image, :image_cache, :content)
     end
 end
   

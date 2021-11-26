@@ -26,6 +26,9 @@ gem 'rexml'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'rails_admin', '~> 2.0'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'rails_admin-i18n'
+gem 'i18n_generators'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
