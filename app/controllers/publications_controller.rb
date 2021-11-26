@@ -16,6 +16,7 @@ class PublicationsController < ApplicationController
         @comments = @publication.comments
         @comment = @publication.comments.build
         @like = current_user.likes.find_by(publication_id: @publication.id)
+        @favorite = current_user.favorites.find_by(publication_id: @publication.id)
     end
   
     def new
