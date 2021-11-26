@@ -1,4 +1,4 @@
-<%= form_with(model: [publication, comment]) do |form| %>
+<%= form_with(model: [@publication, @comment || @publication.comments.build], remote: true) do |form| %>
     <% if comment.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -14,6 +14,7 @@
       <%= form.text_area :content %>
     </div>
     <div class="actions">
-      <%= form.submit %>
+    <%= button_to ( form.object.new_record? ? t("button.create_comment") : t("button.update_comment") ), publication_comments_path(publication_id: @publication), remote: true,
+    class: 'btn btn-primary'  %>
     </div>
   <% end %>
