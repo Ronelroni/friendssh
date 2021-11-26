@@ -39,8 +39,10 @@
                         <%= button_to 'Mettre en Favorie', favorites_path(publication_id: @publication.id), method: :post, class: 'btn btn-outline-primary' %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       <% end %>
                     <% end %>
-                   <%= button_to 'Modifier', edit_publication_path(@publication) %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <%= button_to 'Supprimer', publication_path(@publication.id), method: :delete %>  
+                    <% if current_user.id == @publication.user_id %>
+                      <%= button_to 'Modifier', edit_publication_path(@publication) %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <%= button_to 'Supprimer', publication_path(@publication.id), method: :delete %>
+                    <% end %>  
                  </div>
                  <div class="card-footer text-center">
                  <div id="comments_area">
