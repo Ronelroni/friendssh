@@ -10,7 +10,7 @@ class InstasController < ApplicationController
         end
 
         sign_in @user
-        redirect_to root_path, notice: "Sign in successfully!"
+        redirect_to root_path, notice: "Connecter avec succès!"
     end
 
     def guest_admin
