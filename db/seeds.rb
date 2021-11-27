@@ -16,7 +16,7 @@
         publication = Publication.create!(user_id: user.id, image: image, content: content)
         5.times do |n|
             content = Faker::Lorem.word
-            Comment.create!(user_id: user.id, publication_id: publication.id, image: image, content: content)
+            Comment.create!(user_id: user.id, publication_id: publication.id, content: content)
             
         end
         
