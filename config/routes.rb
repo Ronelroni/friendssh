@@ -6,9 +6,6 @@ Rails.application.routes.draw do
   get '/users_profil', to:'users#profil', as: 'profil'
   root 'instas#index'
   resources :publications do
-    collection do
-      post :confirm
-    end
     resources :comments
   end
   resources :likes, only: [:create, :destroy]

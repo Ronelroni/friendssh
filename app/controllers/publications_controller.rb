@@ -29,27 +29,18 @@ class PublicationsController < ApplicationController
     def create
       @publication = current_user.publications.build(publication_params)
       #@publication.user_id = current_user.id
-      if params[:back]
-        render :new
-      else
-        respond_to do |format|
-          if @publication.save
-            #PublicationMailer.published_mail(@publication).deliver
-            format.html { redirect_to @publication, notice: "Publication crée avec succès." }
-            format.json { render :show, status: :created, location: @publication }
-          else
-            format.html { render :new, status: :unprocessable_entity }
-            format.json { render json: @publication.errors, status: :unprocessable_entity }
-          end
+      respond_to do |format|
+        if @publication.save
+          #PublicationMailer.published_mail(@publication).deliver
+          format.html { redirect_to @publication, notice: "Publication crée avec succès." }
+          format.json { render :show, status: :created, location: @publication }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @publication.errors, status: :unprocessable_entity }
         end
       end
     end
 
-    def confirm
-      @publication = current_user.publications.build(publication_params)
-      render :new if @publication.invalid?
-    end
-  
     def update
       respond_to do |format|
         if @publication.update(publication_params)
