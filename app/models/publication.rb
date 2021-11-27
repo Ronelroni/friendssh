@@ -1,5 +1,5 @@
 class Publication < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   validates :content, presence: true
   mount_uploader :image, ImageUploader
   has_many :comments, dependent: :destroy

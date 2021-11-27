@@ -110,6 +110,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-specs (0.0.5)
+      devise (~> 4.8)
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -347,6 +349,7 @@ DEPENDENCIES
   carrierwave
   cloudinary
   devise
+  devise-specs
   factory_bot_rails
   faker!
   i18n_generators
