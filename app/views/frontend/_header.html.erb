@@ -1,11 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-blue  mb-3" style="background: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);">
+<nav class="navbar navbar-expand-lg navbar-blue  mb-3" style="background: linear-gradient(to right, blue, white, grey, blue, grey);">
     <div class="container">
-        <a class="navbar-brand" href="/">Insta-Friends</a>
+        <a class="navbar-brand" href="/" style="color: green;">FriendShip</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 
                 <% if user_signed_in? %>
                     <%= link_to "Accueil", root_path, class: "btn btn-white" %> &nbsp;&nbsp;
+                    <%= link_to "Groupe", groups_path, class: "btn btn-white" %> &nbsp;&nbsp;
                     <%= link_to "Toutes les publications", allpub_path, class: "btn btn-white" %> &nbsp;&nbsp;
                     <%= link_to "Mes Publications", userpub_path, class: "btn btn-white" %> &nbsp;&nbsp;
                     <%= link_to "Profile", profil_path, class: "btn btn-white" %> &nbsp;&nbsp;
