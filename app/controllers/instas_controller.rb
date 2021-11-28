@@ -11,7 +11,6 @@ class InstasController < ApplicationController
 
         sign_in @user
         redirect_to root_path, notice: "Connecter avec succès!"
-        redirect_to root_path, notice: 'Accès reservé aux administrateurs' if current_user.is_admin != true
     end
 
     def guest_admin
@@ -21,11 +20,8 @@ class InstasController < ApplicationController
         end
         
         sign_in @user
-        if current_user.is_admin != false
-            redirect_to rails_admin_path
-        else
-            redirect_to root_path, notice: 'Accès reservé aux administrateurs'
-        end
+        redirect_to rails_admin_path if current_user.is_admin != false
+        redirect_to root_path, notice: 'Accès reservé aux administrateurs' if current_user.is_admin != true
     end
     
 end
