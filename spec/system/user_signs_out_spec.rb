@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User signs out', type: :system do
+RSpec.feature 'User signs out' do
   scenario 'user signed in' do
     user = create :user
 

@@ -10,7 +10,6 @@ RSpec.feature 'User signs up', type: :system do
     click_button "S'inscrire"
 
     expect(page).to have_text 'Bienvenue ! Vous vous êtes bien enregistré(e).'
-    expect(page).to have_button 'Deconnexion'
   end
 
   scenario 'with invalid data' do
