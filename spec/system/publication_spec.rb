@@ -36,7 +36,7 @@ RSpec.describe 'Fonction de gestion des publication', type: :system do
             click_on "publier"
             click_on "Supprimer"
 
-            expect(page).to have_content "Toutes les Publications"
+            expect(page).to have_content "Publication supprimé"
         end
 
     end
