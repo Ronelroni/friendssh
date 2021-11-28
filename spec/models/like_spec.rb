@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  context "Test model Favorite" do
+  context "Test model Like" do
     it "Mettre un like sur publication réussi" do
       @like = Like.new(user_id: "45", publication_id: "125")
       expect(@like).to be_valid

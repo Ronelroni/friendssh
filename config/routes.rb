@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/administration', as: 'rails_admin'
   get "guess_admin", to: "instas#guest_admin"
   get "guess", to: "instas#guest"
   devise_for :users

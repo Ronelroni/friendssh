@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'User signs up' do
+RSpec.feature 'User signs up', type: :system do
   scenario 'with valid data' do
     visit new_user_registration_path
 
