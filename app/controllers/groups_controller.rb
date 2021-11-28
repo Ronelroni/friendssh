@@ -68,3 +68,4 @@ class GroupsController < ApplicationController
       params.require(:group).permit(:name)
     end
 end
+ 

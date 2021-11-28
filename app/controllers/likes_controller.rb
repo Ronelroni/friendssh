@@ -8,3 +8,4 @@ class LikesController < ApplicationController
         redirect_to publication_path(like.publication), notice: "J'aime plus"
       end
 end
+ 

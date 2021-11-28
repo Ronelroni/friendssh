@@ -18,7 +18,7 @@ class PublicationsController < ApplicationController
         @like = current_user.likes.find_by(publication_id: @publication.id)
         @favorite = current_user.favorites.find_by(publication_id: @publication.id)
     end
-  
+   
     def new
       @publication = Publication.new
     end

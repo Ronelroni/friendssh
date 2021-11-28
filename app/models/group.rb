@@ -6,3 +6,4 @@ class Group < ApplicationRecord
   has_many :groupposts
   accepts_nested_attributes_for :group_users
 end
+ 

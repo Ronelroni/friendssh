@@ -8,3 +8,4 @@ class FavoritesController < ApplicationController
         redirect_to publication_path(favorite.publication), notice: "Publication supprimée des favories"
       end
 end
+ 

@@ -18,4 +18,4 @@ class GrouppostsController < ApplicationController
       def grouppost_params
         params.require(:grouppost).permit(:image, :image_cache, :content)
       end
-  end
+  end 

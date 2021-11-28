@@ -50,4 +50,4 @@ class CommentsController < ApplicationController
     def set_publication
       @publication = Publication.find(params[:publication_id])
     end
-end
+end 
