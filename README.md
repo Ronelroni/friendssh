@@ -20,8 +20,8 @@ Fonction de Commentaire
 ## Execution Procedure
 
 ```bash
-$ git clone git@github.com:YaHack94/Application-Originale.git
-$ cd Application-Originale
+$ git clone git@github.com:Ronelroni/Friends.git
+$ cd Friends
 $ bundle install
 $ rails db:create
 $ rails db:migrate
