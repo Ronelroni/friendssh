@@ -9,9 +9,9 @@ Things you may want to cover:
 
 ## Employmemnt Term Technology
 
-- Devise
-- Fonction de commentaire
-- Fonction de favorie
+Devise
+
+Fonction de Commentaire
 
 ## Technologies outside the curriculum
 
@@ -31,26 +31,26 @@ $ rails s
 
 ## Catalog Design
 
-https://docs.google.com/spreadsheets/d/1KaC7ga7QaF6b6yCZbP_4nwgQJzgqg_cpTG-t0iF3Qq4/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1cADqJd7faVW6DBCcdlHqIRB4PG12JGtAKgsE3SMdGVE/edit?usp=sharing
 
 ## Table Definition Document
 
-https://docs.google.com/spreadsheets/d/1t89QyWJOh0RG74zAl4yszQSQEk5r3v7oD_utBUkRYVg/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1q7OL9cwEAC7YfyAA5fCZQopi7ocv4YmA6OFCbwKa6EU/edit?usp=sharing
 
 ## ER Diagram
 
-![ER Diagram](https://cacoo.com/diagrams/lwspX3clXbJMBEVW-31D80.png)
+![ER Diagram](https://cacoo.com/diagrams/P29j4XAC9BcNapG7-5E3BE.png)
 
-https://cacoo.com/diagrams/lwspX3clXbJMBEVW/31D80
+https://cacoo.com/diagrams/P29j4XAC9BcNapG7/5E3BE
 
 ## Screen Transition Diagram
 
-![transition  diagram](https://cacoo.com/diagrams/lwspX3clXbJMBEVW-933BC.png)
+![transition  diagram](https://cacoo.com/diagrams/P29j4XAC9BcNapG7-B2282.png)
 
-https://cacoo.com/diagrams/lwspX3clXbJMBEVW/933BC
+https://cacoo.com/diagrams/P29j4XAC9BcNapG7/B2282
 
 ## Wireframes
 
-![Wireframes](https://cacoo.com/diagrams/lwspX3clXbJMBEVW-F41A3.png)
+![Wireframes](https://cacoo.com/diagrams/P29j4XAC9BcNapG7-E8284.png)
 
-https://cacoo.com/diagrams/lwspX3clXbJMBEVW/F41A3
+https://cacoo.com/diagrams/P29j4XAC9BcNapG7/E8284
